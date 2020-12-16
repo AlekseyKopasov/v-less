@@ -1,14 +1,24 @@
 <template>
   <div class="wrapper">
     <!-- <header></header> -->
-
-    <div class="wrapper-content">
-      <section>
+    <header>
+      <div class="navbar">
         <div class="container">
-          <h1>Hello</h1>
+          <div class="navbar-content">
+            <div class="logo">VUE-CLI</div>
+            <ul class="navbar-list">
+              <li class="navbar-item">
+                <a href="#" class="navbar-link">Home</a>
+              </li><li class="navbar-item">
+                <a href="#" class="navbar-link">Example</a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </header>
+
+    <router-view></router-view>
 
     <!-- <footer></footer> -->
   </div>
@@ -17,6 +27,3 @@
 <script>
 export default {};
 </script>
-
-<style>
-</style>
