@@ -5,7 +5,7 @@ Vue.use(VueRouter);
 
 import Home from './pages/Home';
 import NotFound from './pages/404';
-import Example from './pages/Example';
+import Shop from './pages/Shop';
 
 export default new VueRouter({
 	mode: 'history',
@@ -21,9 +21,9 @@ export default new VueRouter({
 			component: NotFound,
 		},
 		{
-			path: '/example',
-			name: 'example',
-			component: Example,
+			path: '/shop',
+			name: 'shop',
+			component: Shop,
 		},
 	]
 })

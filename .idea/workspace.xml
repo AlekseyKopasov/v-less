@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="35f3b423-4120-4dbc-a199-391c4e7453a8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v-router/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v-router/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v-router/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v-router/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v-router/src/pages/Example.vue" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/src/pages/Example.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v-router/src/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/src/pages/Home.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/v-router/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,9 +41,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/shop" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\v-sample\shop" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,7 +60,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608143328132</updated>
-      <workItem from="1608143330134" duration="5573000" />
+      <workItem from="1608143330134" duration="10825000" />
     </task>
     <servers />
   </component>
