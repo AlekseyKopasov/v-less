@@ -3,21 +3,10 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
+import shop from './shop';
+
 export default new Vuex.Store({
-	state: {
-		message: 'I`m message',
-	},
-	getters: {
-		getMessage: s => s.message,
-	},
-	mutations: {
-		setMessage(state, msg) {
-			state.message = msg;
-		},
-	},
-	actions: {
-		setMessage({ commit }, payload) {
-			commit('setMessage', payload);
-		},
-	},
+	modules: [
+		shop,
+	],
 });

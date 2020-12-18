@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="35f3b423-4120-4dbc-a199-391c4e7453a8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v-router/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v-router/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v-router/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v-router/src/pages/Example.vue" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/src/pages/Example.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v-router/src/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/src/pages/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/v-router/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/v-router/src/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/pages/Shop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/pages/Shop.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -60,7 +57,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608143328132</updated>
-      <workItem from="1608143330134" duration="10825000" />
+      <workItem from="1608143330134" duration="12923000" />
     </task>
     <servers />
   </component>
