@@ -99,41 +99,13 @@ export default {
       category: "standart",
     },
     options: [],
-    notes: [
-      {
-        title: "First Note",
-        description: "Description for first note",
-        category: 'standart',
-        date: new Date(Date.now()).toLocaleString(),
-      },
-      {
-        title: "Second Note",
-        description: "Description for second note",
-        category: 'important',
-        date: new Date(Date.now()).toLocaleString(),
-      },
-      {
-        title: "Third Note",
-        description: "Description for third note",
-        category: 'very-important',
-        date: new Date(Date.now()).toLocaleString(),
-      },
-    ],
-    categoryOptions: [
-      {
-        title: 'Стандарный',
-        value: 'standart',
-      },
-      {
-        title: 'Важный',
-        value: 'important',
-      },
-      {
-        title: 'Очень важный',
-        value: 'very-important',
-      }
-    ],
+    notes: [],
+    categoryOptions: [],
   }),
+  created() {
+    this.notes = this.$store.getters.getNotes;
+    this.categoryOptions = this.$store.getters.getCategoryOptions;
+  },
   computed: {
     notesFilter() {
       let array = this.notes;
@@ -153,18 +125,12 @@ export default {
 
   methods: {
     addNote() {
-      let { title, description, category } = this.note;
+      this.$store.dispatch('addNote', this.note);
+      let { title } = this.note;
       if (title === "") {
         this.message = "Title can`t be blank!";
         return;
       }
-
-      this.notes.push({
-        title,
-        description,
-        category,
-        date: new Date(Date.now()).toLocaleString(),
-      });
 
       this.note.title = "";
       this.note.description = "";
@@ -173,28 +139,15 @@ export default {
     },
 
     removeNote(idx) {
-      this.notes.splice(idx, 1);
+      this.$store.dispatch('removeNote', idx);
     },
 
     editNote({ idx, evt }) {
-      const note = this.notes[idx];
-      const target = evt.currentTarget;
-      target.classList.add('isVisible');
-      target.querySelector('input').focus();
+      this.$store.dispatch('editNote', { idx, evt });
     },
 
     updateNote({ idx, target, evt }) {
-      const note = this.notes[idx];
-      const input = evt.target;
-
-      if (target) {
-        note.title = input.value;
-      } else {
-        note.description = input.value;
-      }
-
-      note.date = new Date(Date.now()).toLocaleString();
-      input.blur();
+      this.$store.dispatch('updateNote', { idx, target, evt });
     },
   },
 };
