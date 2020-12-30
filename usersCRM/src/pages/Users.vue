@@ -7,20 +7,26 @@
 <!--thead-->
           <thead>
            <tr>
-             <th>Name</th>
-             <th>Age</th>
-             <th>Gender</th>
+             <th @click="sort('name')">Name</th>
+             <th @click="sort('age')">Age</th>
+             <th @click="sort('gender')">Gender</th>
            </tr>
           </thead>
 <!--tbody-->
           <tbody>
-            <tr v-for="user in users" :key="user.id">
-              <td>{{ user.name }}</td>
+            <tr v-for="user in usersSort" :key="user.id">
+              <td>
+                <img :src="user.img" :alt="user.name">
+                <span>{{ user.name }}</span>
+              </td>
               <td>{{ user.age }}</td>
               <td>{{ user.gender }}</td>
             </tr>
           </tbody>
         </table>
+
+        <p>debug: sort: {{ currentSort }} dir: {{ currentSortDir }}</p>
+
       </div>
     </section>
   </div>
@@ -28,17 +34,103 @@
 
 <script>
 
+
 export default {
   data: () => ({
-    users: [],
+    users: [
+      {
+        "name": "Alfa",
+        "age": "30",
+        "gender": "mail",
+        "img": "https://www.fillmurray.com/640/640",
+      },
+      {
+        "name": "Betta",
+        "age": "22",
+        "gender": "femail",
+        "img": "https://www.fillmurray.com/640/640",
+      },
+         {
+        "name": "Gamma",
+        "age": "24",
+        "gender": "mail",
+        "img": "https://www.fillmurray.com/640/640",
+      },
+         {
+        "name": "Delta",
+        "age": "25",
+        "gender": "femail",
+        "img": "https://www.fillmurray.com/640/640",
+      },
+         {
+        "name": "Tetta",
+        "age": "29",
+        "gender": "femail",
+        "img": "https://www.fillmurray.com/640/640",
+      },
+         {
+        "name": "Bret",
+        "age": "26",
+        "gender": "mail",
+        "img": "https://www.fillmurray.com/640/640",
+      },
+         {
+        "name": "Betta",
+        "age": "22",
+        "gender": "femail",
+        "img": "https://www.fillmurray.com/640/640",
+      },
+         {
+        "name": "Ervin",
+        "age": "23",
+        "gender": "femail",
+        "img": "https://www.fillmurray.com/640/640",
+      },
+         {
+        "name": "Howell",
+        "age": "32",
+        "gender": "femail",
+        "img": "https://www.fillmurray.com/640/640",
+      },
+         {
+        "name": "Antonette",
+        "age": "18",
+        "gender": "femail",
+        "img": "https://www.fillmurray.com/640/640",
+      },
+         {
+        "name": "Antonette",
+        "age": "35",
+        "gender": "femail",
+        "img": "https://www.fillmurray.com/640/640",
+      },
+
+],
+    currentSort: 'name',
+    currentSortDir: 'asc',
   }),
 
-  created() {
-    this.users = [
-      { id: 1, name: 'Jack', age: 23, gender: 'male' },
-      { id: 2, name: 'Jasmine', age: 18, gender: 'female' },
-    ]
-  }
+  computed: {
+    usersSort() {
+      return this.users
+        .sort((a, b) => {
+          let mod = 1
+          if (this.currentSortDir === 'desc') mod = -1
+          if (a[this.currentSort] < b[this.currentSort]) return -1 * mod
+          if (a[this.currentSort] > b[this.currentSort]) return mod
+          return 0
+        });
+    },
+  },
+
+  methods: {
+    sort(e) {
+      if (e === this.currentSort) {
+        this.currentSortDir = this.currentSortDir === 'asc' ? 'desc' : 'asc'
+      }
+      this.currentSort = e
+    },
+  },
 }
 </script>
 
