@@ -7,9 +7,9 @@
 <!--thead-->
           <thead>
            <tr>
-             <th @click="sort('name')">Name</th>
-             <th @click="sort('age')">Age</th>
-             <th @click="sort('gender')">Gender</th>
+             <th @click="sort('name')">Name &#8595;</th>
+             <th @click="sort('age')">Age &#8595;</th>
+             <th @click="sort('gender')">Gender &#8595;</th>
            </tr>
           </thead>
 <!--tbody-->
@@ -25,8 +25,20 @@
           </tbody>
         </table>
 
-        <p>debug: sort: {{ currentSort }} dir: {{ currentSortDir }}</p>
+        <p>
+          <span>debug: sort: {{ currentSort }} dir: {{ currentSortDir }}</span>
+          <p>page: {{ this.page.current }}</p>
+        </p>
 
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="button-list">
+          <div class="btn btnPrimary" @click="prevPage">&#8592;</div>
+          <div class="btn btnPrimary" @click="nextPage">&#8594;</div>
+        </div>
       </div>
     </section>
   </div>
@@ -108,6 +120,10 @@ export default {
 ],
     currentSort: 'name',
     currentSortDir: 'asc',
+    page: {
+      current: 1,
+      length: 3,
+    },
   }),
 
   computed: {
@@ -119,7 +135,13 @@ export default {
           if (a[this.currentSort] < b[this.currentSort]) return -1 * mod
           if (a[this.currentSort] > b[this.currentSort]) return mod
           return 0
-        });
+        }).filter((row, index) => {
+          let start = (this.page.current -1) * this.page.length
+          let end = this.page.current * this.page.length
+          if (index >= start && index < end) {
+            return true
+          }
+      });
     },
   },
 
@@ -129,6 +151,19 @@ export default {
         this.currentSortDir = this.currentSortDir === 'asc' ? 'desc' : 'asc'
       }
       this.currentSort = e
+    },
+
+    // Pagination
+    prevPage() {
+      if (this.page.current > 1) {
+        this.page.current -= 1;
+      }
+    },
+
+    nextPage() {
+      if ((this.page.current * this.page.length) < this.users.length) {
+        this.page.current += 1;
+      }
     },
   },
 }
