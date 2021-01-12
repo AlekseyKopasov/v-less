@@ -30,8 +30,8 @@
 import notify from '@/components/Notify.vue'
 // UI
 import preloader from '@/components/UI/Preloader.vue'
+
 import axios from 'axios';
-// http://q911703i.beget.tech/v-notify-api/notifyApi.php
 
 export default {
   components: {
@@ -41,14 +41,27 @@ export default {
 
   data: () => ({
     loading: false,
-    messages: [],
   }),
 
   mounted() {
     this.getNotify();
   },
 
+  computed: {
+    messages() {
+      return this.$store.getters.getMessageMain;
+    }
+  },
+
   methods: {
+    getNotifyLazy() {
+      this.loading = true
+
+      setTimeout(() => {
+        this.getNotify()
+      }, 1000)
+    },
+
     getNotify() {
       this.loading = true;
 
@@ -56,7 +69,19 @@ export default {
         .get('http://q911703i.beget.tech/v-notify-api/notifyApi.php')
           .then(response => {
             const res = response.data.notify;
-            this.messages = res;
+            const messages = [];
+            const messagesMain = [];
+            // this.messages = res;
+
+            for (let i = 0; i < res.length; i += 1) {
+              if (res[i].main) {
+                messagesMain.push(res[i]);
+              } else {
+                messages.push(res[i]);
+              }
+            }
+            this.$store.dispatch('setMessage', messages);
+            this.$store.dispatch('setMessageMain', messagesMain);
           })
           .catch(error => {
             console.error(error);
@@ -64,13 +89,6 @@ export default {
           .finally(() => {
             this.loading = false;
           })
-    },
-
-    getNotifyLazy () {
-      this.loading = true
-      setTimeout (() => {
-        this.getNotify()
-      }, 1800)
     },
   },
 };
