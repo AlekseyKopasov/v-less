@@ -14,13 +14,13 @@
         <!-- preloader -->
         <preloader v-if="loading" :width="90" :height="90"/>
 
-        <!-- erorr -->
-<!--        <div class="error" v-if="error">-->
-<!--          <p>{{ error }}</p>-->
-<!--        </div>-->
+<!--         erorr-->
+        <div class="error" v-if="error">
+          <p>{{ error }}</p>
+        </div>
 
-        <!-- notify -->
-        <notify :messages="messages"/>
+<!--         notify-->
+        <notify v-if="!loading && !error" :messages="messages"/>
       </div>
     </div>
   </div>
@@ -31,8 +31,6 @@ import notify from '@/components/Notify.vue'
 // UI
 import preloader from '@/components/UI/Preloader.vue'
 
-import axios from 'axios';
-
 export default {
   components: {
     notify,
@@ -40,7 +38,7 @@ export default {
   },
 
   data: () => ({
-    loading: false,
+    error: null,
   }),
 
   mounted() {
@@ -48,6 +46,10 @@ export default {
   },
 
   computed: {
+    loading() {
+      return this.$store.getters.getLoading;
+    },
+
     messages() {
       return this.$store.getters.getMessageMain;
     }
@@ -71,7 +73,6 @@ export default {
             const res = response.data.notify;
             const messages = [];
             const messagesMain = [];
-            // this.messages = res;
 
             for (let i = 0; i < res.length; i += 1) {
               if (res[i].main) {
@@ -85,6 +86,7 @@ export default {
           })
           .catch(error => {
             console.error(error);
+            this.error = 'Error: Network Error';
           })
           .finally(() => {
             this.loading = false;
