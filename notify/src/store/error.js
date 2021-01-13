@@ -1,9 +1,21 @@
 export default ({
-	state: {},
+	state: {
+		error: null,
+	},
 
-	getters: {},
+	getters: {
+		getError: s => s.error,
+	},
 
-	mutations: {},
+	mutations: {
+		setError(state, payload) {
+			state.error = payload;
+		}
+	},
 
-	actions: {},
+	actions: {
+		setError({ commit }, payload) {
+			commit('setError', payload);
+		}
+	},
 });
