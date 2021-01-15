@@ -2,6 +2,10 @@
   <div class="wrapper-content wrapper-content--fixed">
     <section>
       <div class="container">
+
+<!--error-->
+        <p class="error" v-if="error">{{ error }}</p>
+
 <!--search-->
         <search
             :value="search"
@@ -9,7 +13,8 @@
             @search="search = $event"
         />
 <!--buttons-->
-        <button class="btn btnPrimary" @click="getRepos">Search</button>
+        <button v-if="!repos" class="btn btnPrimary" @click="getRepos">Search!</button>
+        <button v-else class="btn btnPrimary" @click="getRepos">Search Again!</button>
 
 <!--item-->
         <div class="repos__wrapper" v-if="repos">
@@ -35,6 +40,7 @@ export default {
   data:() => ({
     search: '',
     repos: null,
+    error: null,
   }),
 
   methods: {
@@ -43,9 +49,11 @@ export default {
         .get(`https://api.github.com/users/${this.search}/repos`)
         .then(res => {
           this.repos = res.data;
-          console.log(res.data);
+          this.error = null;
         })
         .catch(err => {
+          this.repos = null;
+          this.error = 'Can`t find this user'
           console.log('error --->', err);
         })
     }
@@ -58,6 +66,10 @@ export default {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.error {
+  margin-bottom: 30px;
 }
 
 button {
