@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="35f3b423-4120-4dbc-a199-391c4e7453a8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/pages/Shop.vue" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/pages/Shop.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/shop/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-finder/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/github-finder/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/github-finder/src/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/github-finder/src/pages/Home.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +38,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/shop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/blog" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.2.4\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -49,6 +49,16 @@
       <recent name="D:\Projects\v-sample\shop" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="localhost:8080" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.localhost:8080" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -58,6 +68,9 @@
       <option name="presentableId" value="Default" />
       <updated>1608143328132</updated>
       <workItem from="1608143330134" duration="12923000" />
+      <workItem from="1623963973736" duration="714000" />
+      <workItem from="1624048686318" duration="1554000" />
+      <workItem from="1624912825546" duration="22000" />
     </task>
     <servers />
   </component>
@@ -74,5 +87,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

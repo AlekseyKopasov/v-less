@@ -20,7 +20,7 @@
         <div class="repos__wrapper" v-if="repos">
           <div class="repo-item" v-for="repo in repos" :key="repo.id">
             <div class="repo-info">
-              <a class="link" :href="repo.html_url" target="_blank">{{ repo.name }}</a>
+              <a class="link" :href="repo.html_url" target="_blank" rel="nofollow noopener">{{ repo.name }}</a>
               <span>{{ repo.stargazers_count }}⭐</span>
             </div>
           </div>
