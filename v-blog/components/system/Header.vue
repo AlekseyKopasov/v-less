@@ -23,6 +23,7 @@ export default {
     links: [
       { title: "Home", url: "/" },
       { title: "About", url: "/about" },
+      { title: "Blog", url: "/blog" },
     ],
   }),
 };
