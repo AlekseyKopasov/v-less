@@ -2,6 +2,9 @@
   <section class="contacts">
     <div class="container">
       <h2 class="title">Contact me!</h2>
+
+      <Message v-if="message" :message="message" />
+
       <form class="contact-form" action="/" @submit.prevent="onSubmit">
         <AppInput v-model="user.name">Name:</AppInput>
         <AppInput v-model="user.email" type="email">Email:</AppInput>
@@ -17,14 +20,17 @@
 </template>
 
 <script>
+import Message from "@/components/UI/Message.vue";
 import AppButton from "@/components/UI/Controls/Button.vue";
 import AppInput from "@/components/UI/Controls/Input.vue";
 import AppTextArea from "@/components/UI/Controls/TextArea.vue";
 
 export default {
-  components: { AppButton, AppInput, AppTextArea },
+  components: { AppButton, AppInput, AppTextArea, Message },
 
   data: () => ({
+    message: null,
+
     user: {
       name: "",
       email: "",
@@ -34,7 +40,10 @@ export default {
 
   methods: {
     onSubmit() {
-      console.log(this.user);
+      this.user = "";
+      this.email = "";
+      this.text = "";
+      this.message = "Submited!";
     },
   },
 };
