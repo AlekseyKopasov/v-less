@@ -1,6 +1,7 @@
 <template>
   <section class="new-comment">
     <div class="container">
+      <h2 class="title">New Comment:</h2>
       <form class="contact-form" action="/" @submit.prevent="onSubmit">
         <label for="">Name:</label>
         <input v-model="comment.name" type="text" />
@@ -10,7 +11,7 @@
 
         <!-- buttons -->
         <div class="controls">
-          <button class="btn btnPrimary">Submit!</button>
+          <AppButton> Submit! </AppButton>
         </div>
       </form>
     </div>
@@ -18,7 +19,11 @@
 </template>
 
 <script>
+import AppButton from "@/components/UI/Controls/Button.vue";
+
 export default {
+  components: { AppButton },
+
   data: () => ({
     comment: {
       name: "",
