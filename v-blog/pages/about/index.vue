@@ -4,7 +4,7 @@
       <div class="container">
         <h1 class="title">About my blog:</h1>
         <p>Lorem ipsum dolor sit amet.</p>
-        <intro title="Lorem ipsum" />
+        <Intro title="Lorem ipsum" />
         <p>Lorem ipsum dolor sit amet.</p>
         <img src="@/assets/img/about.jpg" alt="" />
         <p>Lorem ipsum dolor sit amet.</p>
@@ -12,13 +12,6 @@
     </section>
   </div>
 </template>
-
-<script>
-import intro from "@/components/UI/Intro";
-export default {
-  components: { intro },
-};
-</script>
 
 <style lang="scss">
 .about {
