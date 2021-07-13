@@ -1,6 +1,6 @@
 <template>
   <div>
-    <newPostForm />
+    <newPostForm @submit="onSubmit" />
   </div>
 </template>
 
@@ -11,6 +11,11 @@ import newPostForm from '@/components/Admin/NewPostForm.vue';
 export default {
   components: { newPostForm },
   layout: 'admin',
+  methods: {
+    onSubmit(post) {
+      console.log('Post Add --->', post)
+    },
+  },
 }
 </script>
 
