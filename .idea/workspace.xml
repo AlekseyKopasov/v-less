@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35f3b423-4120-4dbc-a199-391c4e7453a8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github-finder/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/github-finder/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github-finder/src/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/github-finder/src/pages/Home.vue" afterDir="false" />
-    </list>
+    <list default="true" id="35f3b423-4120-4dbc-a199-391c4e7453a8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +67,7 @@
       <workItem from="1623963973736" duration="714000" />
       <workItem from="1624048686318" duration="1554000" />
       <workItem from="1624912825546" duration="22000" />
+      <workItem from="1626208309075" duration="150000" />
     </task>
     <servers />
   </component>

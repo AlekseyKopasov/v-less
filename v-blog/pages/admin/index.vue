@@ -6,8 +6,8 @@
 
 <script>
 export default {
+  layout: "admin",
   data: () => ({
-    layout: "admin",
     posts: [
       {
         id: 1,
